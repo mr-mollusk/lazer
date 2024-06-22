@@ -43,5 +43,7 @@ export function getTraversalOrder(image: Pixel[][]): Point[] {
     }
   }
 
-  return traversalOrder;
+  return traversalOrder.filter((item, index) => {
+    if (index % 5 === 0) return item;
+  });
 }

@@ -58,7 +58,6 @@ export const Canvas = ({ size = 200 }: ICanvasProps) => {
     // Перерисовываем черно-белое изображение
     // ctx.putImageData(imageData, 0, 0);
 
-    
     // Разбиваем изображение на пиксели и выводим их в консоль как массив
     const pixels = [];
     for (let y = 0; y < canvas.height; y++) {
@@ -79,7 +78,7 @@ export const Canvas = ({ size = 200 }: ICanvasProps) => {
     console.log(pixels);
 
     console.log(newPixels);
-    
+
     ctx.fillStyle = "rgba(255, 255, 255, 1)";
     ctx.fillRect(0, 0, img.width, img.height);
     const fillColor = "rgba(0, 0, 0, 1)"; // Красный цвет, пример
@@ -87,7 +86,7 @@ export const Canvas = ({ size = 200 }: ICanvasProps) => {
     newPixels.forEach((point) => {
       const { x, y } = point;
       ctx.fillStyle = fillColor;
-      ctx.fillRect(y, x, 1, 1); // Рисуем пиксель на холсте
+      setTimeout(() => ctx.fillRect(y, x, 1, 1), 50); // Рисуем пиксель на холсте
     });
   };
 
